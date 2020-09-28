@@ -10,11 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let searchBox: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.placeholder = ""
-        return searchBar
-    }()
+    let searchBox = UISearchBar()
     
     var placeholders = ["トマト", "ほうれん草","野菜","シリアル","トイレットペーパー",]
     
@@ -36,16 +32,15 @@ class ViewController: UIViewController {
        
     }
     
-    let keyframes:[Double] = [0.0, 3.0, 6.0, 7.0]
+    let keyframes:[Double] = [0.0, 0.4, 3.4, 3.8]
     var animationStartDate = Date()
-    let animationDelay:Double = 3
     var placeHolderOpcity:Double = 1
 
     var currentPlaceholder = 0
 
 
     func setPlaceholderTextAndOpacity(opacity:Double, text:String) {
-        searchBox.searchTextField.attributedPlaceholder = NSAttributedString( string: text, attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 0, green: 0, blue: 0, alpha: CGFloat(opacity))])
+        searchBox.searchTextField.attributedPlaceholder = NSAttributedString( string: text, attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 0.576, green: 0.569, blue: 0.561, alpha: CGFloat(opacity))])
     }
 
     @objc func handleUpdate() {
@@ -57,10 +52,11 @@ class ViewController: UIViewController {
             case 0 ..< keyframes[1]:
                 //keyframe 0
 
-                let percentage:Double = elapsedTime / (keyframes[1] - keyframes[0])
+                let animationDuration = keyframes[1] - keyframes[0]
+                let percentage:Double = elapsedTime / animationDuration
                 placeHolderOpcity = percentage
                 setPlaceholderTextAndOpacity(opacity: placeHolderOpcity, text: placeholders[currentPlaceholder])
-            
+
             case keyframes[1] ..< keyframes[2]:
                 //keyframe 1
                 placeHolderOpcity = 1
@@ -71,7 +67,9 @@ class ViewController: UIViewController {
             case keyframes[2] ..< keyframes[3]:
                 
                 //keyframe 2
-                let percentage:Double = (elapsedTime - keyframes[2]) / (keyframes[3] - keyframes[2])
+                let elapsedTimeInKeyframe = elapsedTime - keyframes[2]
+                let animationDuration = keyframes[3] - keyframes[2]
+                let percentage:Double = elapsedTimeInKeyframe / animationDuration
                 placeHolderOpcity = 1 - percentage
                 setPlaceholderTextAndOpacity(opacity: placeHolderOpcity, text: placeholders[currentPlaceholder])
 
