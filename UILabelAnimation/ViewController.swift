@@ -14,11 +14,6 @@ class ViewController: UIViewController {
     
     var placeholders = ["トマト", "ほうれん草","野菜","シリアル","トイレットペーパー",]
     
-    func getUdatedPlaceHolder() -> String {
-        let shuffle = placeholders.shuffled()
-        return shuffle[0]
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
