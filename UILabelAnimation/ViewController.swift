@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     let searchBox = UISearchBar()
     
-    var placeholders = ["トマト", "ほうれん草","野菜","シリアル","トイレットペーパー",]
+    var placeholders = ["MacBook Air", "MacBook Pro","AirPods","AirPods Pro","iPad Pro",]
     
     override func viewDidLoad() {
         super.viewDidLoad()
