@@ -1,10 +1,21 @@
 # What is it?
 
-This is a demo iOS app that plays some animation in searchbar placeholder text.
+This is a demo iOS app that plays an animation in searchbar placeholder text.
 In the search bar, placeholder is randomly selected from predefined array. Then, it shows another placeholders with fade-in/out effect one by one.
-It is useful for search UI to show keyword examples in specific enough, and to show variety of them. 
+It is usefule because it can show example search keywords in specific manner, and can show variety of them. 
 
 # How to use
 
 Take whatever the lines of codes you need.
 All you need is written in ViewController.swift
+
+# What's great about it?
+UIKit offers simple ways to implement annimation, like view.animate().
+However, some of the parameters cannot be animated with that API.
+In this project, placeholder opacity is change over time with non-UIKit API, which is called CADisplayLink.
+CADisplayLink is an API that allows to synchronize code executions to a display refresh rate, which is normally 60fps.
+NSTimer is sometimes used for similar purpose, but it doesn't gurantee the execution timing, and execution rate is not as high as 60fps.
+For animation, CADisplayLink is more appropreate, though it is a bit tricky. 
+
+# Note
+Execution of the animation is done in main thread. If another animation is ongoing in main thread, this animation might stop.
