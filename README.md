@@ -4,7 +4,7 @@ This is a demo iOS app that plays an animation in searchbar placeholder text.
 In the search bar, placeholder is randomly selected from predefined array. Then, it shows another placeholders with fade-in/out effect one by one.
 It is usefule because it can show example search keywords in specific manner, and can show variety of them. 
 
-<img src="'https://storage.googleapis.com/zenn-user-upload/p0cmkr5i4ds78ywdl22ey0w08fqg">
+<img src="https://storage.googleapis.com/zenn-user-upload/p0cmkr5i4ds78ywdl22ey0w08fqg">
 
 # How to use
 
