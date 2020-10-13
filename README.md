@@ -14,10 +14,10 @@ All you need is written in ViewController.swift
 # What's great about it?
 UIKit offers simple ways to implement annimation, like `view.animate()`.
 However, some of the parameters cannot be animated with that API, like `UILabel`'s opacity, for example.
-In this project, placeholder's opacity changes over time with non-UIKit API called CADisplayLink.
-CADisplayLink is a CoreAnimation API that allows to synchronize code executions to a display refresh rate, which is normally 60fps.
-NSTimer is sometimes used for similar purpose, but it seems not gurantee the execution timing, and the rate is not as high as 60fps.
-For animation, CADisplayLink is more appropreate, though it is a bit tricky. 
+In this project, placeholder's opacity changes over time with non-UIKit API called `CADisplayLink`.
+`CADisplayLink` is a CoreAnimation API that allows to synchronize code executions to a display refresh rate, which is normally 60fps.
+`NSTimer` is sometimes used for similar purpose, but it seems not gurantee the execution timing, and the rate is not as high as 60fps.
+For animation, `CADisplayLink` is more appropreate, though it is a bit tricky. 
 
 # Note
 Execution of the animation is done in main thread. If another animation is ongoing in main thread, this animation might stop.
